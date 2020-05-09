@@ -23,9 +23,6 @@ import org.apache.spark.streaming.kafka010.ConsumerStrategies._
 
 import scala.collection.mutable.Map
 
-/**
- * Created by kafka on 9/6/18.
- */
 object DstreamFraudDetection extends SparkJob("Fraud Detection using Dstream"){
 
   val logger = Logger.getLogger(getClass.getName)
