@@ -9,11 +9,6 @@ import org.apache.spark.ml.Pipeline
 
 
 
-
-/**
- * Created by kafka on 9/5/18.
- */
-
 object FraudDetectionTraining extends SparkJob("Balancing Fraud & Non-Fraud Dataset"){
 
 
