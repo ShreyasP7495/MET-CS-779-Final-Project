@@ -45,11 +45,6 @@ object FraudDetectionTraining extends SparkJob("Balancing Fraud & Non-Fraud Data
 
     val nonFraudDF = featureDF.filter($"is_fraud" === 0)
     val fraudCount = fraudDF.count()
-
-
-    /* There will be very few fraud transaction and more normal transaction. Models created  from such
-     * imbalanced data will not have good prediction accuracy. Hence balancing the dataset. K-means is used for balancing
-     */
     val balancedNonFraudDF = DataBalancing.createBalancedDataframe(nonFraudDF, fraudCount.toInt)
     val finalfeatureDF = fraudDF.union(balancedNonFraudDF)
 
