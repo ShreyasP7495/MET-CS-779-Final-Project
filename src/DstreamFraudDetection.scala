@@ -129,13 +129,7 @@ object DstreamFraudDetection extends SparkJob("Fraud Detection using Dstream"){
           val kafkaOffsetTable = brodcastMap.value("kafkaOffsetTable")
 
  /*
-          Writing to Fraud, NonFruad and Offset Table in single iteration
-          Cassandra prepare statement is used because it avoids pasring of the column for every insert and hence efficient
-          Offset is inserted last to achieve atleast once semantics. it is possible that it may read duplicate creditcard
-          transactions from kafka while restart.
-          Even though duplicate creditcard transaction are read from kafka, writing to Cassandra is idempotent. Becasue
-          cc_num and trans_time is the primary key. So you cannot have duplicate records with same cc_num and trans_time.
-          As a result we achive exactly once semantics.
+
 */
 
           connector.withSessionDo(session => {
