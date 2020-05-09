@@ -8,9 +8,7 @@ import com.datamantra.utils.Utils
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types.{TimestampType, IntegerType}
 
-/**
- * Created by kafka on 24/5/18.
- */
+
 object IntialImportToCassandra extends SparkJob("Initial Import to Cassandra"){
 
   def main(args: Array[String]) {
