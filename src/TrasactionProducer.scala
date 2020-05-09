@@ -13,10 +13,6 @@ import org.apache.commons.csv.CSVParser;
 import java.nio.charset.Charset;
 import org.apache.kafka.clients.producer._
 
-
-/**
- * Created by kafka on 14/5/18.
- */
 object TrasactionProducer {
 
   var applicationConf:Config = _
